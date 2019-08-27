@@ -4,4 +4,4 @@ require_relative './lib/pair'
 require_relative './lib/pair_db'
 
 p = Pairer.new
-p.pair
+p.run

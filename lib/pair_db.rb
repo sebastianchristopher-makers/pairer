@@ -14,4 +14,16 @@ class PairDB
     rs = @con.exec 'SELECT * FROM last_pairs;'
     rs.each_with_object(Array.new) { |row, last_pairs| last_pairs << Pair.new(row['pair_one'], row['pair_two']) }
   end
+
+  def add_pair(pair)
+    @con.exec "INSERT INTO last_pairs(pair_one, pair_two) VALUES('#{pair.p1}', '#{pair.p2}');"
+  end
+
+  def delete_pairs
+    @con.exec 'DELETE FROM last_pairs;'
+  end
+
+  def close_con
+    @con.close if @con
+  end
 end

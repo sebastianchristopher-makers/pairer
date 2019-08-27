@@ -7,10 +7,10 @@ class Pairer
     @pairs = []
   end
 
-  def pair
+  def run
     new_pairs
-    @db.con.exec 'DELETE FROM last_pairs;'
-    @pairs.each { |pair| @db.con.exec "INSERT INTO last_pairs(pair_one, pair_two) VALUES('#{pair.p1}', '#{pair.p2}');" }
+    @db.delete_pairs
+    @pairs.each { |pair| @db.add_pair(pair) }
     print_pairs
     exit
   end
@@ -41,6 +41,6 @@ class Pairer
   end
 
   def exit
-    @db.con.close if @db.con
+    @db.close_con
   end
 end

@@ -1,6 +1,6 @@
-## Setup:
+## To set up the project
 
-bundle
+Clone this repository and then run:
 
 ### To set up the database
 
