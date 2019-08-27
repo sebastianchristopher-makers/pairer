@@ -1,7 +1,7 @@
 class Pairer
 
   def initialize
-    @db = PairDB.new('student')
+    @db = PairDB.new('pairer')
     @names = @db.names('Captain Crunch')
     @last_pairs = @db.last_pairs
     @pairs = []
@@ -25,7 +25,7 @@ class Pairer
       break if no_matches?
     end
   end
-  
+
   def print_pairs
     puts "Last pairs:"
     @last_pairs.each { |pair| p pair.pair }
