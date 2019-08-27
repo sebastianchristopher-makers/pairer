@@ -20,7 +20,7 @@ class PairDB
   end
 
   def delete_pairs
-    @con.exec 'DELETE FROM last_pairs;'
+    @con.exec 'TRUNCATE last_pairs;'
   end
 
   def close_con
