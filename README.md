@@ -1,7 +1,9 @@
 ## To set up the project
 
 Clone this repository and then run:
-
+```
+bundle
+```
 ### To set up the database
 
 Connect to `psql` and create the `pairer` database:
